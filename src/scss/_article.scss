@@ -1,0 +1,60 @@
+.article {
+   position: absolute;
+   max-width: 20.375rem; // 326px
+   max-height: 33.5rem;//512 px
+   top: 0; bottom: 0; left: 0; right: 0;
+   margin: auto;
+   background-color: white;
+   border-radius: 15px;
+
+   &-image {
+      background-image: url("../../images/drawers.jpg");
+      background-size: cover;
+      background-repeat:   no-repeat;
+      background-position: center center; 
+      height: 12.5rem; // 200px
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+   }
+
+   &-content {
+      margin-top: 1.25rem;
+      margin-bottom: 1.25rem;
+      padding: 1.25rem 2rem 1.25rem 2rem;
+   }
+
+   &-author {
+      position: relative;
+      img {
+         &:nth-child(1){
+            width: 2.6rem;
+            height: 2.6rem;
+            border-radius: 40px;
+         }
+         &:nth-child(3){
+            float: right;
+         }
+      }
+
+      &-bio {
+         position: absolute;
+         display: inline-block;
+         margin-left: 1rem;
+
+         h2 {
+            font-size: $font-size-lg;
+         }
+
+         > div {
+            margin-top: 0.25rem;
+            color: $desaturatedDarkBlue;
+            opacity: 0.7;
+         }
+      }
+   }
+
+   &-share {
+      
+   }
+}
+

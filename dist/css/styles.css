@@ -1,0 +1,96 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8125rem;
+  color: #48556a;
+  background-color: #ecf2f8;
+  font-weight: 500;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: #48556a;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: left;
+  font-size: 1rem;
+}
+
+p {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  line-height: 1.7;
+  color: #6d7f97;
+}
+
+.article {
+  position: absolute;
+  max-width: 20.375rem;
+  max-height: 33.5rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.article-image {
+  background-image: url("../../images/drawers.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 12.5rem;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.article-content {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem 2rem 1.25rem 2rem;
+}
+
+.article-author {
+  position: relative;
+}
+
+.article-author img:nth-child(1) {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 40px;
+}
+
+.article-author img:nth-child(3) {
+  float: right;
+}
+
+.article-author-bio {
+  position: absolute;
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.article-author-bio h2 {
+  font-size: 1rem;
+}
+
+.article-author-bio > div {
+  margin-top: 0.25rem;
+  color: #6d7f97;
+  opacity: 0.7;
+}
+/*# sourceMappingURL=styles.css.map */
