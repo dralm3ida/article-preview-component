@@ -28,16 +28,33 @@
       <p>Ever been in a room and felt like something was missing? Perhaps 
         it felt slightly bare and uninviting. I’ve got some simple tips 
         to help you make any room feel complete.</p>
-      <div class="article-author">
+    </div>
+    <!-- Footer -->
+    <div class="article-footer">
+      <!-- Author -->
+      <div class="article-footer-author">
         <img src="images/avatar-michelle.jpg" alt="Michelle">
-        <div class="article-author-bio">
+        <div class="article-footer-author-bio">
           <h2>Michelle Appleton</h2>
           <div>28 Jun 2020</div>
         </div>
-        <img src="images/icon-share.svg" alt="">
+        <button id="btn-share-off">
+          <img src="images/icon-share.svg" alt="Share">
+        </button>
       </div>
-      <div class="article-share">
-        Share
+      <!-- Share -->
+      <div class="article-footer-share hide">
+        <div class="article-footer-share-grid">
+          <span class="article-footer-share-grid-item">SHARE</span>
+          <span class="article-footer-share-grid-item">
+            <img class="svg-background" src="images/icon-facebook.svg" alt="Facebook">
+            <img class="svg-background" src="images/icon-twitter.svg" alt="Twitter">
+            <img class="svg-background" src="images/icon-pinterest.svg" alt="Pinterest">
+          </span>
+          <button id="btn-share-on">
+            <img class="svg-background" src="images/icon-share.svg" alt="Share">
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -46,5 +63,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">dralmeida</a>.
   </div>
+
+  <script src="src/js/app.js"></script>
 </body>
 </html>

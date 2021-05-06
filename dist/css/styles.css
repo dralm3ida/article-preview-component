@@ -35,10 +35,18 @@ p {
   color: #6d7f97;
 }
 
+.hide {
+  display: none !important;
+}
+
+.svg-background {
+  filter: brightness(1000%);
+}
+
 .article {
   position: absolute;
   max-width: 20.375rem;
-  max-height: 33.5rem;
+  height: max-content;
   top: 0;
   bottom: 0;
   left: 0;
@@ -60,37 +68,88 @@ p {
 
 .article-content {
   margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  padding: 1.25rem 2rem 1.25rem 2rem;
+  padding: 1.25rem 2rem 0rem 2rem;
 }
 
-.article-author {
+.article-footer {
   position: relative;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
-.article-author img:nth-child(1) {
+.article-footer-author {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas: 'avatar bio button';
+  grid-gap: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.article-footer-author > img {
+  grid-area: avatar;
   width: 2.6rem;
   height: 2.6rem;
   border-radius: 40px;
 }
 
-.article-author img:nth-child(3) {
-  float: right;
-}
-
-.article-author-bio {
-  position: absolute;
+.article-footer-author-bio {
+  grid-area: bio;
   display: inline-block;
-  margin-left: 1rem;
 }
 
-.article-author-bio h2 {
-  font-size: 1rem;
+.article-footer-author-bio h2 {
+  font-size: 0.8125rem;
 }
 
-.article-author-bio > div {
+.article-footer-author-bio > div {
   margin-top: 0.25rem;
   color: #6d7f97;
   opacity: 0.7;
+}
+
+.article-footer-author button {
+  grid-area: button;
+  justify-self: end;
+  align-self: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: #ecf2f8;
+  border-radius: 40px;
+  border: none;
+}
+
+.article-footer-share {
+  padding: 1rem 2rem 1rem 2rem;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #48556a;
+}
+
+.article-footer-share-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  color: #ecf2f8;
+}
+
+.article-footer-share-grid > span:nth-child(1) {
+  letter-spacing: 4px;
+  opacity: 0.7;
+}
+
+.article-footer-share-grid > span:nth-child(2) img {
+  margin-right: 1rem;
+}
+
+.article-footer-share-grid-item {
+  align-self: center;
+}
+
+.article-footer-share-grid button {
+  justify-self: end;
+  width: 2rem;
+  height: 2rem;
+  background-color: #6d7f97;
+  border-radius: 40px;
+  border: none;
 }
 /*# sourceMappingURL=styles.css.map */

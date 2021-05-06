@@ -1,7 +1,7 @@
 .article {
    position: absolute;
    max-width: 20.375rem; // 326px
-   max-height: 33.5rem;//512 px
+   height: max-content;
    top: 0; bottom: 0; left: 0; right: 0;
    margin: auto;
    background-color: white;
@@ -19,42 +19,90 @@
 
    &-content {
       margin-top: 1.25rem;
-      margin-bottom: 1.25rem;
-      padding: 1.25rem 2rem 1.25rem 2rem;
+      padding: 1.25rem 2rem 0rem 2rem;
    }
 
-   &-author {
+   &-footer {
       position: relative;
-      img {
-         &:nth-child(1){
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+
+      &-author {
+         display: grid;
+         grid-template-columns: 1fr 4fr 1fr;
+         grid-template-areas: 'avatar bio button';
+         grid-gap: 1rem;
+         padding: 1rem 2rem 1rem 2rem;
+
+         > img {
+            grid-area: avatar;
             width: 2.6rem;
             height: 2.6rem;
             border-radius: 40px;
          }
-         &:nth-child(3){
-            float: right;
+
+         &-bio {
+            grid-area: bio;
+            display: inline-block;
+   
+            h2 {
+               font-size: $font-size;
+            }
+   
+            > div {
+               margin-top: 0.25rem;
+               color: $desaturatedDarkBlue;
+               opacity: 0.7;
+            }
+         }
+
+         button {
+            grid-area: button;
+            justify-self: end;
+            align-self: center;
+            width: 2rem;
+            height: 2rem;
+            background-color: $lightGrayishBlue;
+            border-radius: 40px;
+            border: none;
          }
       }
 
-      &-bio {
-         position: absolute;
-         display: inline-block;
-         margin-left: 1rem;
+      &-share {
+         padding: 1rem 2rem 1rem 2rem;
+         border-bottom-left-radius: 15px;
+         border-bottom-right-radius: 15px;
+         background-color: $veryDarkGrayishBlue;
 
-         h2 {
-            font-size: $font-size-lg;
-         }
+         &-grid {
+            display: grid;
+            grid-template-columns: 2fr 3fr 1fr;
+            color: $lightGrayishBlue;
 
-         > div {
-            margin-top: 0.25rem;
-            color: $desaturatedDarkBlue;
-            opacity: 0.7;
+            > span:nth-child(1) {
+               letter-spacing: 4px;
+               opacity: 0.7;
+            }
+
+            > span:nth-child(2) {
+               img {
+                  margin-right: 1rem;
+               }
+            }
+
+            &-item {
+               align-self: center;
+            }
+   
+            button {
+               justify-self: end;
+               width: 2rem;
+               height: 2rem;
+               background-color: $desaturatedDarkBlue;
+               border-radius: 40px;
+               border: none;
+            }
          }
       }
-   }
-
-   &-share {
-      
    }
 }
-

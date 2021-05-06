@@ -30,7 +30,15 @@ h1 {
 
 p {
    padding-top: 1.25rem;
-   padding-bottom: 1.25rem;
+   padding-bottom: 1.25rem; // 20px
    line-height: 1.7;
    color: $desaturatedDarkBlue;
+}
+
+.hide {
+   display: none !important;
+}
+
+.svg-background {
+   filter: brightness(1000%);
 }
