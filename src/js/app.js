@@ -1,19 +1,25 @@
-const btnShareOff = document.querySelector("#btn-share-off");
-const btnShareOn = document.querySelector("#btn-share-on");
-
+const btnShare = document.querySelectorAll("#btn-share1, #btn-share2");
 const articleFooterAuthor = document.querySelector(".article-footer-author");
 const articleFooterShare = document.querySelector(".article-footer-share");
+const articleFooterTooltip = document.querySelector(".article-footer-tooltip");
 
-console.log("init", articleFooterAuthor, articleFooterShare);
+const laptopSize = 1024;
 
-btnShareOff.addEventListener('click', event => {
-   console.log("btnShareOff");
-   articleFooterAuthor.classList.add('hide');
-   articleFooterShare.classList.remove('hide');
+var vw = null;
+
+btnShare.forEach(btn => {
+   btn.addEventListener('click', event =>{
+      if ( vw < laptopSize ){
+         articleFooterAuthor.classList.toggle('hide-mobile');
+         articleFooterShare.classList.toggle('hide-mobile');
+      } else {
+         articleFooterTooltip.classList.toggle('hide-desktop');
+         btn.classList.toggle('btn-share-open');
+         btn.children[0].classList.toggle('svg-background');
+      }
+   });
 });
 
-btnShareOn.addEventListener('click', event => {
-   console.log("btnShareOn");
-   articleFooterAuthor.classList.remove('hide');
-   articleFooterShare.classList.add('hide');
-});
+function updateVw(){
+   vw = Math.max(window.innerWidth || 0, document.documentElement.clientWidth || 0);
+}

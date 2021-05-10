@@ -18,42 +18,51 @@
 
   <link rel="stylesheet" href="dist/css/styles.css">
 </head>
-<body>
+<body onresize="updateVw()" onload="updateVw()">
 
   <div class="article">
     <div class="article-image"></div>
-    <div class="article-content">
-      <h1>Shift the overall look and feel by adding these wonderful 
-        touches to furniture in your home</h1>
-      <p>Ever been in a room and felt like something was missing? Perhaps 
-        it felt slightly bare and uninviting. I’ve got some simple tips 
-        to help you make any room feel complete.</p>
-    </div>
-    <!-- Footer -->
-    <div class="article-footer">
-      <!-- Author -->
-      <div class="article-footer-author">
-        <img src="images/avatar-michelle.jpg" alt="Michelle">
-        <div class="article-footer-author-bio">
-          <h2>Michelle Appleton</h2>
-          <div>28 Jun 2020</div>
-        </div>
-        <button id="btn-share-off">
-          <img src="images/icon-share.svg" alt="Share">
-        </button>
+    <div class="article-wrapper">
+      <div class="article-content">
+        <h1>Shift the overall look and feel by adding these wonderful 
+          touches to furniture in your home</h1>
+        <p>Ever been in a room and felt like something was missing? Perhaps 
+          it felt slightly bare and uninviting. I’ve got some simple tips 
+          to help you make any room feel complete.</p>
       </div>
-      <!-- Share -->
-      <div class="article-footer-share hide">
-        <div class="article-footer-share-grid">
-          <span class="article-footer-share-grid-item">SHARE</span>
-          <span class="article-footer-share-grid-item">
-            <img class="svg-background" src="images/icon-facebook.svg" alt="Facebook">
-            <img class="svg-background" src="images/icon-twitter.svg" alt="Twitter">
-            <img class="svg-background" src="images/icon-pinterest.svg" alt="Pinterest">
-          </span>
-          <button id="btn-share-on">
-            <img class="svg-background" src="images/icon-share.svg" alt="Share">
+      <!-- Footer -->
+      <div class="article-footer">
+        <!-- Author -->
+        <div class="article-footer-author">
+          <img src="images/avatar-michelle.jpg" alt="Michelle">
+          <div class="article-footer-author-bio">
+            <h2>Michelle Appleton</h2>
+            <div>28 Jun 2020</div>
+          </div>
+          <button id="btn-share1">
+            <img src="images/icon-share.svg" alt="Share">
           </button>
+        </div>
+        <!-- Share Mobile -->
+        <div class="article-footer-share hide-mobile">
+          <div class="article-footer-share-grid">
+            <span class="grid-item share-text">SHARE</span>
+            <img class="grid-item svg-background" src="images/icon-facebook.svg" alt="Facebook">
+            <img class="grid-item svg-background" src="images/icon-twitter.svg" alt="Twitter">
+            <img class="grid-item svg-background" src="images/icon-pinterest.svg" alt="Pinterest">
+            <button id="btn-share2" class="grid-item">
+              <img class="svg-background" src="images/icon-share.svg" alt="Share">
+            </button>
+          </div>
+        </div>
+        <!-- Share Desktop -->
+        <div class="article-footer-tooltip hide-desktop">
+          <div class="article-footer-tooltip-grid">
+            <span class="grid-item share-text">SHARE</span>
+            <img class="grid-item svg-background" src="images/icon-facebook.svg" alt="Facebook">
+            <img class="grid-item svg-background" src="images/icon-twitter.svg" alt="Twitter">
+            <img class="grid-item svg-background" src="images/icon-pinterest.svg" alt="Pinterest">
+          </div>
         </div>
       </div>
     </div>

@@ -35,10 +35,37 @@ p {
    color: $desaturatedDarkBlue;
 }
 
-.hide {
+.hide-mobile {
    display: none !important;
+}
+
+.hide-desktop {
+   visibility: hidden !important;
+   opacity: 0 !important;
+}
+
+.share-text {
+   letter-spacing: 4px;
+   opacity: 0.7;
+}
+
+.grid-item {
+   align-self: center;
+}
+
+.grid-item.svg-background {
+   @include break-up($laptop-md){
+      &:hover{
+         cursor: pointer;
+         filter: brightness(90%);
+      }
+   }
 }
 
 .svg-background {
    filter: brightness(1000%);
+}
+
+.btn-share-open {
+   background-color: $desaturatedDarkBlue !important;
 }
