@@ -35,13 +35,28 @@ p {
   color: #6d7f97;
 }
 
-.hide-mobile {
+.hide {
   display: none !important;
 }
 
-.hide-desktop {
-  visibility: hidden !important;
-  opacity: 0 !important;
+.share-on {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #48556a;
+}
+
+@media (min-width: 64rem) {
+  .share-on {
+    background-color: unset;
+  }
+}
+
+.share-on button {
+  background-color: #6d7f97 !important;
+}
+
+.share-on button img {
+  filter: brightness(1000%);
 }
 
 .share-text {
@@ -58,14 +73,6 @@ p {
     cursor: pointer;
     filter: brightness(90%);
   }
-}
-
-.svg-background {
-  filter: brightness(1000%);
-}
-
-.btn-share-open {
-  background-color: #6d7f97 !important;
 }
 
 .article {
@@ -125,17 +132,27 @@ p {
 }
 
 .article-footer {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-areas: 'content button';
   position: relative;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
 .article-footer-author {
+  grid-area: content;
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-  grid-template-areas: 'avatar bio button';
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: 'avatar bio';
   grid-gap: 1rem;
   padding: 1rem 2rem 1rem 2rem;
+}
+
+@media (min-width: 64rem) {
+  .article-footer-author {
+    display: grid !important;
+  }
 }
 
 .article-footer-author > img {
@@ -160,33 +177,34 @@ p {
   opacity: 0.7;
 }
 
-.article-footer-author button {
-  grid-area: button;
-  justify-self: end;
-  align-self: center;
-  width: 2rem;
-  height: 2rem;
-  background-color: #ecf2f8;
-  border-radius: 40px;
-  border: none;
+.article-footer-share {
+  grid-area: content;
+  padding: 1rem 2rem 1rem 2rem;
 }
 
 @media (min-width: 64rem) {
-  .article-footer-author button:hover {
-    cursor: pointer;
-    background-color: #6d7f97;
-    box-shadow: 0 0 5px;
+  .article-footer-share {
+    max-width: 15.5rem;
+    position: absolute;
+    bottom: 105%;
+    left: 78%;
+    padding: 1.125rem 2.25rem 1.125rem 2.25rem;
+    border-radius: 10px;
+    color: #ecf2f8;
+    background-color: #48556a;
+    box-shadow: 0px 10px 5px;
+    opacity: 1;
+    transition: opacity 0.5s;
   }
-  .article-footer-author button:hover img {
-    filter: brightness(1000%);
+  .article-footer-share::after {
+    content: "";
+    position: absolute;
+    bottom: -21%;
+    left: 45%;
+    border-width: 12px 11px 0px 11px;
+    border-style: solid;
+    border-color: #48556a transparent transparent transparent;
   }
-}
-
-.article-footer-share {
-  padding: 1rem 2rem 1rem 2rem;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #48556a;
 }
 
 .article-footer-share-grid {
@@ -196,44 +214,35 @@ p {
   color: #ecf2f8;
 }
 
-.article-footer-share-grid button {
-  justify-self: end;
+@media (min-width: 64rem) {
+  .article-footer-share-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+
+.article-footer button {
+  grid-area: button;
+  align-self: center;
   width: 2rem;
   height: 2rem;
-  background-color: #6d7f97;
+  background-color: #ecf2f8;
   border-radius: 40px;
   border: none;
 }
 
-.article-footer-tooltip {
-  visibility: visible;
-  max-width: 15.5rem;
-  position: absolute;
-  bottom: 105%;
-  left: 62%;
-  padding: 1.125rem 2.25rem 1.125rem 2.25rem;
-  z-index: 1;
-  border-radius: 10px;
-  color: #ecf2f8;
-  background-color: #48556a;
-  box-shadow: 0px 10px 5px;
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-
-.article-footer-tooltip::after {
-  content: "";
-  position: absolute;
-  bottom: -21%;
-  left: 45%;
-  border-width: 12px 11px 0px 11px;
-  border-style: solid;
-  border-color: #48556a transparent transparent transparent;
-}
-
-.article-footer-tooltip-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  grid-gap: 1rem;
+@media (min-width: 64rem) {
+  .article-footer button {
+    justify-self: center;
+  }
+  .article-footer button:hover {
+    cursor: pointer;
+    background-color: #6d7f97;
+    box-shadow: 0 0 5px;
+  }
+  .article-footer button:hover img {
+    filter: brightness(1000%);
+  }
 }
 /*# sourceMappingURL=styles.css.map */

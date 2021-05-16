@@ -18,7 +18,7 @@
 
   <link rel="stylesheet" href="dist/css/styles.css">
 </head>
-<body onresize="updateVw()" onload="updateVw()">
+<body>
 
   <div class="article">
     <div class="article-image"></div>
@@ -39,31 +39,19 @@
             <h2>Michelle Appleton</h2>
             <div>28 Jun 2020</div>
           </div>
-          <button id="btn-share1">
-            <img src="images/icon-share.svg" alt="Share">
-          </button>
         </div>
-        <!-- Share Mobile -->
-        <div class="article-footer-share hide-mobile">
+        <!-- Share -->
+        <div class="article-footer-share hide">
           <div class="article-footer-share-grid">
             <span class="grid-item share-text">SHARE</span>
             <img class="grid-item svg-background" src="images/icon-facebook.svg" alt="Facebook">
             <img class="grid-item svg-background" src="images/icon-twitter.svg" alt="Twitter">
             <img class="grid-item svg-background" src="images/icon-pinterest.svg" alt="Pinterest">
-            <button id="btn-share2" class="grid-item">
-              <img class="svg-background" src="images/icon-share.svg" alt="Share">
-            </button>
           </div>
         </div>
-        <!-- Share Desktop -->
-        <div class="article-footer-tooltip hide-desktop">
-          <div class="article-footer-tooltip-grid">
-            <span class="grid-item share-text">SHARE</span>
-            <img class="grid-item svg-background" src="images/icon-facebook.svg" alt="Facebook">
-            <img class="grid-item svg-background" src="images/icon-twitter.svg" alt="Twitter">
-            <img class="grid-item svg-background" src="images/icon-pinterest.svg" alt="Pinterest">
-          </div>
-        </div>
+        <button>
+          <img src="images/icon-share.svg" alt="Share">
+        </button>
       </div>
     </div>
   </div>

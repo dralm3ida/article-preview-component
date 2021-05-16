@@ -47,16 +47,24 @@
    }
 
    &-footer {
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+      grid-template-areas: 'content button';
       position: relative;
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
 
       &-author {
+         grid-area: content;
          display: grid;
-         grid-template-columns: 1fr 4fr 1fr;
-         grid-template-areas: 'avatar bio button';
+         grid-template-columns: 1fr 3fr;
+         grid-template-areas: 'avatar bio';
          grid-gap: 1rem;
          padding: 1rem 2rem 1rem 2rem;
+
+         @include break-up($laptop-md){
+            display: grid !important;
+         }
 
          > img {
             grid-area: avatar;
@@ -79,83 +87,70 @@
                opacity: 0.7;
             }
          }
-
-         button {
-            grid-area: button;
-            justify-self: end;
-            align-self: center;
-            width: 2rem;
-            height: 2rem;
-            background-color: $lightGrayishBlue;
-            border-radius: 40px;
-            border: none;
-
-            @include break-up($laptop-md){
-               &:hover{
-                  cursor: pointer;
-                  background-color: $desaturatedDarkBlue;
-                  box-shadow: 0 0 5px;
-
-                  img {
-                     filter: brightness(1000%);
-                  }
-               }
-            }
-         }
       }
 
       &-share {
+         grid-area: content;
          padding: 1rem 2rem 1rem 2rem;
-         border-bottom-left-radius: 15px;
-         border-bottom-right-radius: 15px;
-         background-color: $veryDarkGrayishBlue;
+
+         @include break-up($laptop-md){
+            max-width: 15.5rem; // 248px
+            position: absolute;
+            bottom: 105%;
+            left: 78%;
+            padding: 1.125rem 2.25rem 1.125rem 2.25rem;
+            border-radius: 10px;
+            color: $lightGrayishBlue;
+            background-color: $veryDarkGrayishBlue;
+            box-shadow: 0px 10px 5px;
+            opacity: 1;
+            transition: opacity 0.5s;
+
+            &::after {
+               content: "";
+               position: absolute;
+               bottom: -21%;
+               left: 45%;
+               border-width: 12px 11px 0px 11px;
+               border-style: solid;
+               border-color: $veryDarkGrayishBlue transparent transparent transparent;
+            }
+         }
 
          &-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
             grid-gap: 1rem;
             color: $lightGrayishBlue;
-   
-            button {
-               justify-self: end;
-               width: 2rem;
-               height: 2rem;
-               background-color: $desaturatedDarkBlue;
-               border-radius: 40px;
-               border: none;
+
+            @include break-up($laptop-md){
+               display: grid;
+               grid-template-columns: 2fr 1fr 1fr 1fr;
+               grid-gap: 1rem;
             }
          }
       }
 
-      &-tooltip {
-         visibility: visible;
-         max-width: 15.5rem; // 248px
-         position: absolute;
-         bottom: 105%;
-         left: 62%;
-         padding: 1.125rem 2.25rem 1.125rem 2.25rem;
-         z-index: 1;
-         border-radius: 10px;
-         color: $lightGrayishBlue;
-         background-color: $veryDarkGrayishBlue;
-         box-shadow: 0px 10px 5px;
-         opacity: 1;
-         transition: opacity 0.5s;
+      button {
+         grid-area: button;
+         align-self: center;
+         width: 2rem;
+         height: 2rem;
+         background-color: $lightGrayishBlue;
+         border-radius: 40px;
+         border: none;
 
-         &::after {
-            content: "";
-            position: absolute;
-            bottom: -21%;
-            left: 45%;
-            border-width: 12px 11px 0px 11px;
-            border-style: solid;
-            border-color: $veryDarkGrayishBlue transparent transparent transparent;
-         }
+         @include break-up($laptop-md){
+            justify-self: center;
+            &:hover{
+               cursor: pointer;
+               background-color: $desaturatedDarkBlue;
+               box-shadow: 0 0 5px;
 
-         &-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            grid-gap: 1rem;
+               img {
+                  filter: brightness(1000%);
+               }
+            }
          }
       }
    }
